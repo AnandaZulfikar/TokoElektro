@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace TokoElektro
 {
-    public partial class Form1 : Form
+    public partial class Admin_Home : UserControl
     {
-        public Form1()
+        public Admin_Home()
         {
             InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
