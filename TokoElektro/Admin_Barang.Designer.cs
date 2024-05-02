@@ -32,6 +32,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button_hapus = new System.Windows.Forms.Button();
             this.button_tambah = new System.Windows.Forms.Button();
+            this.button_update = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +57,9 @@
             // button_hapus
             // 
             this.button_hapus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button_hapus.Location = new System.Drawing.Point(116, 73);
+            this.button_hapus.FlatAppearance.BorderSize = 0;
+            this.button_hapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_hapus.Location = new System.Drawing.Point(189, 73);
             this.button_hapus.Name = "button_hapus";
             this.button_hapus.Size = new System.Drawing.Size(75, 23);
             this.button_hapus.TabIndex = 9;
@@ -66,6 +69,8 @@
             // button_tambah
             // 
             this.button_tambah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_tambah.FlatAppearance.BorderSize = 0;
+            this.button_tambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_tambah.Location = new System.Drawing.Point(27, 73);
             this.button_tambah.Name = "button_tambah";
             this.button_tambah.Size = new System.Drawing.Size(75, 23);
@@ -73,10 +78,24 @@
             this.button_tambah.Text = "Tambah";
             this.button_tambah.UseVisualStyleBackColor = false;
             // 
+            // button_update
+            // 
+            this.button_update.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button_update.FlatAppearance.BorderSize = 0;
+            this.button_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_update.Location = new System.Drawing.Point(108, 73);
+            this.button_update.Name = "button_update";
+            this.button_update.Size = new System.Drawing.Size(75, 23);
+            this.button_update.TabIndex = 11;
+            this.button_update.Text = "Update";
+            this.button_update.UseVisualStyleBackColor = false;
+            this.button_update.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Admin_Barang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button_update);
             this.Controls.Add(this.button_tambah);
             this.Controls.Add(this.button_hapus);
             this.Controls.Add(this.dataGridView1);
@@ -94,5 +113,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button_hapus;
         private System.Windows.Forms.Button button_tambah;
+        private System.Windows.Forms.Button button_update;
     }
 }

@@ -23,5 +23,10 @@ namespace TokoElektro
             DashboardAdmin admindashboard = new DashboardAdmin();
             admindashboard.Show();
         }
+
+        private void button_cancel_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
