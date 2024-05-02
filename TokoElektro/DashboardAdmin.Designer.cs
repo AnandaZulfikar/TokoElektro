@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button_Logout = new System.Windows.Forms.Button();
             this.button_detailTransaksi = new System.Windows.Forms.Button();
             this.button_barang = new System.Windows.Forms.Button();
             this.button_home = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +52,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(189, 450);
             this.panel1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.AliceBlue;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(3, 231);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(183, 49);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Karyawan";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button_karyawan_Click);
             // 
             // label1
             // 
@@ -75,6 +88,7 @@
             this.button_Logout.TabIndex = 5;
             this.button_Logout.Text = "Logout";
             this.button_Logout.UseVisualStyleBackColor = false;
+            this.button_Logout.Click += new System.EventHandler(this.button_Logout_Click);
             // 
             // button_detailTransaksi
             // 
@@ -85,7 +99,7 @@
             this.button_detailTransaksi.Name = "button_detailTransaksi";
             this.button_detailTransaksi.Size = new System.Drawing.Size(183, 49);
             this.button_detailTransaksi.TabIndex = 2;
-            this.button_detailTransaksi.Text = "Detail Transaksi";
+            this.button_detailTransaksi.Text = "Struk";
             this.button_detailTransaksi.UseVisualStyleBackColor = false;
             this.button_detailTransaksi.Click += new System.EventHandler(this.button_detailTransaksi_Click);
             // 
@@ -114,19 +128,6 @@
             this.button_home.Text = "Home";
             this.button_home.UseVisualStyleBackColor = false;
             this.button_home.Click += new System.EventHandler(this.button_home_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.AliceBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(3, 231);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 49);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Karyawan";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button_karyawan_Click);
             // 
             // DashboardAdmin
             // 

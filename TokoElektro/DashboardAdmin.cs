@@ -15,6 +15,14 @@ namespace TokoElektro
         public DashboardAdmin()
         {
             InitializeComponent();
+            Admin_Home admin_home = this.Controls.OfType<Admin_Home>().FirstOrDefault();
+            if (admin_home == null)
+            {
+                admin_home = new Admin_Home();
+                admin_home.Dock = DockStyle.Fill;
+                this.Controls.Add(admin_home);
+            }
+            admin_home.BringToFront();
         }
 
         private void button_home_Click(object sender, EventArgs e)
@@ -63,6 +71,13 @@ namespace TokoElektro
                 this.Controls.Add(admin_karyawan);
             }
             admin_karyawan.BringToFront();
+        }
+
+        private void button_Logout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Login panggil = new Form_Login();
+            panggil.Show();
         }
     }
 }
