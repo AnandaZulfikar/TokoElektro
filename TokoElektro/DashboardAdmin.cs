@@ -15,62 +15,39 @@ namespace TokoElektro
         public DashboardAdmin()
         {
             InitializeComponent();
-            Admin_Home admin_home = this.Controls.OfType<Admin_Home>().FirstOrDefault();
-            if (admin_home == null)
+            ShowUserControl<Admin_Home>();
+        }
+
+        public void ShowUserControl<T>() where T : UserControl, new()
+        {
+            T userControl = this.Controls.OfType<T>().FirstOrDefault();
+            if (userControl == null)
             {
-                admin_home = new Admin_Home();
-                admin_home.Dock = DockStyle.Fill;
-                this.Controls.Add(admin_home);
+                userControl = new T();
+                userControl.Dock = DockStyle.Fill;
+                this.Controls.Add(userControl);
             }
-            admin_home.BringToFront();
+            userControl.BringToFront();
         }
 
         private void button_home_Click(object sender, EventArgs e)
         {
-            Admin_Home admin_home = this.Controls.OfType<Admin_Home>().FirstOrDefault();
-            if(admin_home == null)
-            {
-                admin_home = new Admin_Home();
-                admin_home.Dock = DockStyle.Fill;
-                this.Controls.Add(admin_home);
-            }
-            admin_home.BringToFront();
+            ShowUserControl<Admin_Home>();
         }
 
         private void button_barang_Click(object sender, EventArgs e)
         {
-            Admin_Barang admin_barang = this.Controls.OfType<Admin_Barang>().FirstOrDefault();
-            if(admin_barang == null)
-            {
-                admin_barang = new Admin_Barang();
-                admin_barang.Dock = DockStyle.Fill;
-                this.Controls.Add(admin_barang);
-            }
-            admin_barang.BringToFront();
+            ShowUserControl<Admin_Barang>();
         }
 
         private void button_detailTransaksi_Click(object sender, EventArgs e)
         {
-            Admin_detailTransaksi admin_detail_transaksi = this.Controls.OfType<Admin_detailTransaksi>().FirstOrDefault();
-            if(admin_detail_transaksi == null)
-            {
-                admin_detail_transaksi = new Admin_detailTransaksi();
-                admin_detail_transaksi.Dock = DockStyle.Fill;
-                this.Controls.Add(admin_detail_transaksi);
-            }
-            admin_detail_transaksi.BringToFront();
+            ShowUserControl<Admin_detailTransaksi>();
         }
 
         private void button_karyawan_Click(object sender, EventArgs e)
         {
-            Admin_Karyawan admin_karyawan = this.Controls.OfType<Admin_Karyawan>().FirstOrDefault();
-            if(admin_karyawan == null)
-            {
-                admin_karyawan = new Admin_Karyawan();
-                admin_karyawan.Dock = DockStyle.Fill;
-                this.Controls.Add(admin_karyawan);
-            }
-            admin_karyawan.BringToFront();
+            ShowUserControl<Admin_Karyawan>();
         }
 
         private void button_Logout_Click(object sender, EventArgs e)
