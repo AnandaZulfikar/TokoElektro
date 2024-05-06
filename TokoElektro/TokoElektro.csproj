@@ -90,11 +90,29 @@
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalVar.cs" />
+    <Compile Include="Karyawan_Barang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Karyawan_Barang.Designer.cs">
+      <DependentUpon>Karyawan_Barang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Karyawan_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Karyawan_Home.Designer.cs">
       <DependentUpon>Karyawan_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Karyawan_Struk.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Karyawan_Struk.Designer.cs">
+      <DependentUpon>Karyawan_Struk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Karyawan_Transaksi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Karyawan_Transaksi.Designer.cs">
+      <DependentUpon>Karyawan_Transaksi.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -119,8 +137,17 @@
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Karyawan_Barang.resx">
+      <DependentUpon>Karyawan_Barang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Karyawan_Home.resx">
       <DependentUpon>Karyawan_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Karyawan_Struk.resx">
+      <DependentUpon>Karyawan_Struk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Karyawan_Transaksi.resx">
+      <DependentUpon>Karyawan_Transaksi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
