@@ -64,6 +64,7 @@
             this.button_transaksi.TabIndex = 7;
             this.button_transaksi.Text = "Transaksi";
             this.button_transaksi.UseVisualStyleBackColor = false;
+            this.button_transaksi.Click += new System.EventHandler(this.button_transaksi_Click);
             // 
             // label1
             // 
@@ -87,6 +88,7 @@
             this.button_Logout.TabIndex = 5;
             this.button_Logout.Text = "Logout";
             this.button_Logout.UseVisualStyleBackColor = false;
+            this.button_Logout.Click += new System.EventHandler(this.button_Logout_Click);
             // 
             // button_struk
             // 
@@ -99,6 +101,7 @@
             this.button_struk.TabIndex = 2;
             this.button_struk.Text = "Struk";
             this.button_struk.UseVisualStyleBackColor = false;
+            this.button_struk.Click += new System.EventHandler(this.button_struk_Click);
             // 
             // button_barang
             // 
@@ -111,6 +114,7 @@
             this.button_barang.TabIndex = 1;
             this.button_barang.Text = "Barang";
             this.button_barang.UseVisualStyleBackColor = false;
+            this.button_barang.Click += new System.EventHandler(this.button_barang_Click);
             // 
             // button_home
             // 
@@ -123,6 +127,7 @@
             this.button_home.TabIndex = 0;
             this.button_home.Text = "Home";
             this.button_home.UseVisualStyleBackColor = false;
+            this.button_home.Click += new System.EventHandler(this.button_home_Click);
             // 
             // DashboardKaryawan
             // 
