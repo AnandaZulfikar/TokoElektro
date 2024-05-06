@@ -198,7 +198,7 @@ namespace TokoElektro
 
         private void button_hapus_Click(object sender, EventArgs e)
         {
-            deleteData();0
+            deleteData();
         }
     }
 }
