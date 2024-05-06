@@ -70,6 +70,13 @@
     <Compile Include="Admin_Karyawan.Designer.cs">
       <DependentUpon>Admin_Karyawan.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashboardKaryawan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardKaryawan.Designer.cs">
+      <DependentUpon>DashboardKaryawan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dbconfig.cs" />
     <Compile Include="DashboardAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +88,13 @@
     </Compile>
     <Compile Include="Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalVar.cs" />
+    <Compile Include="Karyawan_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Karyawan_Home.Designer.cs">
+      <DependentUpon>Karyawan_Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,8 +113,14 @@
     <EmbeddedResource Include="DashboardAdmin.resx">
       <DependentUpon>DashboardAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DashboardKaryawan.resx">
+      <DependentUpon>DashboardKaryawan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Karyawan_Home.resx">
+      <DependentUpon>Karyawan_Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
