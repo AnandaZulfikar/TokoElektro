@@ -76,6 +76,7 @@
     <Compile Include="DashboardAdmin.Designer.cs">
       <DependentUpon>DashboardAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="dbconfig.cs" />
     <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
