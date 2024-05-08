@@ -22,7 +22,16 @@ namespace TokoElektro
         public Form_Login()
         {
             InitializeComponent();
+            panel1.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panel1.Width, panel1.Height, 20, 20));
+            panel2.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 20, 20));
+            button_login.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, button_login.Width, button_login.Height, 20, 20));
+            button_cancel.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, button_cancel.Width, button_cancel.Height, 20, 20));
+            textBox_username.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, textBox_username.Width, textBox_username.Height, 20, 20));
+            textBox_password.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, textBox_password.Width, textBox_password.Height, 20, 20));
+
         }
+        [System.Runtime.InteropServices.DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
 
         private void button_login_Click(object sender, EventArgs e)
         {
