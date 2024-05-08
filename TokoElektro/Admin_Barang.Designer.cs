@@ -66,7 +66,7 @@
             this.button_hapus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.button_hapus.FlatAppearance.BorderSize = 0;
             this.button_hapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_hapus.Location = new System.Drawing.Point(189, 73);
+            this.button_hapus.Location = new System.Drawing.Point(182, 398);
             this.button_hapus.Name = "button_hapus";
             this.button_hapus.Size = new System.Drawing.Size(75, 23);
             this.button_hapus.TabIndex = 9;
@@ -79,7 +79,7 @@
             this.button_tambah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button_tambah.FlatAppearance.BorderSize = 0;
             this.button_tambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_tambah.Location = new System.Drawing.Point(27, 73);
+            this.button_tambah.Location = new System.Drawing.Point(20, 398);
             this.button_tambah.Name = "button_tambah";
             this.button_tambah.Size = new System.Drawing.Size(75, 23);
             this.button_tambah.TabIndex = 10;
@@ -92,7 +92,7 @@
             this.button_update.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button_update.FlatAppearance.BorderSize = 0;
             this.button_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_update.Location = new System.Drawing.Point(108, 73);
+            this.button_update.Location = new System.Drawing.Point(101, 398);
             this.button_update.Name = "button_update";
             this.button_update.Size = new System.Drawing.Size(75, 23);
             this.button_update.TabIndex = 11;
@@ -158,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.txtStok);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtHarga);
