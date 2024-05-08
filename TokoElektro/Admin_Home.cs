@@ -15,7 +15,12 @@ namespace TokoElektro
         public Admin_Home()
         {
             InitializeComponent();
+            panel1.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, panel1.Width, panel1.Height, 20, 20));
+            panel2.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 20, 20));
+            panel5.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, panel5.Width, panel5.Height, 20,20));
+
         }
+
 
         private void label2_Click(object sender, EventArgs e)
         {

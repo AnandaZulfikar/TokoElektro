@@ -58,6 +58,8 @@
             // button_cancel
             // 
             this.button_cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button_cancel.FlatAppearance.BorderSize = 0;
+            this.button_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_cancel.Location = new System.Drawing.Point(217, 198);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(75, 23);
@@ -69,6 +71,8 @@
             // button_login
             // 
             this.button_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_login.FlatAppearance.BorderSize = 0;
+            this.button_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_login.Location = new System.Drawing.Point(356, 198);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(75, 23);
@@ -88,10 +92,12 @@
             // 
             // textBox_password
             // 
+            this.textBox_password.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox_password.Location = new System.Drawing.Point(237, 141);
             this.textBox_password.Name = "textBox_password";
             this.textBox_password.Size = new System.Drawing.Size(173, 20);
             this.textBox_password.TabIndex = 3;
+            this.textBox_password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -113,10 +119,12 @@
             // 
             // textBox_username
             // 
+            this.textBox_username.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox_username.Location = new System.Drawing.Point(237, 84);
             this.textBox_username.Name = "textBox_username";
             this.textBox_username.Size = new System.Drawing.Size(173, 20);
             this.textBox_username.TabIndex = 0;
+            this.textBox_username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel2
             // 

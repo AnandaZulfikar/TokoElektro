@@ -15,6 +15,13 @@ namespace TokoElektro
         public DashboardAdmin()
         {
             InitializeComponent();
+            panel1.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, panel1.Width, panel1.Height, 12, 12));
+            button_Logout.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_Logout.Width, button_Logout.Height, 10,10));
+            button_home.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_home.Width, button_home.Height, 8, 8));
+            button_barang.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_barang.Width, button_barang.Height, 8, 8));
+            button_detailTransaksi.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_detailTransaksi.Width, button_detailTransaksi.Height, 8, 8));
+            button_karyawan.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_karyawan.Width, button_karyawan.Height, 8, 8));
+
             ShowUserControl<Admin_Home>();
         }
 

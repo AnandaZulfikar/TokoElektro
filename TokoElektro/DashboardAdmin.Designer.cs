@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_karyawan = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button_Logout = new System.Windows.Forms.Button();
             this.button_detailTransaksi = new System.Windows.Forms.Button();
@@ -41,7 +41,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Blue;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button_karyawan);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button_Logout);
             this.panel1.Controls.Add(this.button_detailTransaksi);
@@ -53,18 +53,18 @@
             this.panel1.Size = new System.Drawing.Size(189, 450);
             this.panel1.TabIndex = 2;
             // 
-            // button1
+            // button_karyawan
             // 
-            this.button1.BackColor = System.Drawing.Color.AliceBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(3, 231);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 49);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Karyawan";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button_karyawan_Click);
+            this.button_karyawan.BackColor = System.Drawing.Color.AliceBlue;
+            this.button_karyawan.FlatAppearance.BorderSize = 0;
+            this.button_karyawan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_karyawan.Location = new System.Drawing.Point(3, 231);
+            this.button_karyawan.Name = "button_karyawan";
+            this.button_karyawan.Size = new System.Drawing.Size(183, 49);
+            this.button_karyawan.TabIndex = 7;
+            this.button_karyawan.Text = "Karyawan";
+            this.button_karyawan.UseVisualStyleBackColor = false;
+            this.button_karyawan.Click += new System.EventHandler(this.button_karyawan_Click);
             // 
             // label1
             // 
@@ -151,6 +151,6 @@
         private System.Windows.Forms.Button button_detailTransaksi;
         private System.Windows.Forms.Button button_barang;
         private System.Windows.Forms.Button button_home;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_karyawan;
     }
 }
