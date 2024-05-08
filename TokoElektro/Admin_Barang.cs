@@ -111,7 +111,7 @@ namespace TokoElektro
                 if (!string.IsNullOrEmpty(txtNamaBarang.Text) && !string.IsNullOrEmpty(txtStok.Text) &&
                     !string.IsNullOrEmpty(txtHarga.Text))
                 {
-                    DialogResult result = MessageBox.Show("Apakah yakin ingin update ?", "Confirmation", MessageBoxButtons.YesNo,
+                    DialogResult result = MessageBox.Show("Apakah yakin ingin update data?", "Confirmation", MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question);
                     if (result == DialogResult .Yes)
                     {
@@ -154,7 +154,7 @@ namespace TokoElektro
                 if (!string.IsNullOrEmpty(txtNamaBarang.Text) && !string.IsNullOrEmpty(txtStok.Text) &&
                     !string.IsNullOrEmpty(txtHarga.Text))
                 {
-                    DialogResult result = MessageBox.Show("Apakah yakin untuk delete ?", "Confirmation", MessageBoxButtons.YesNo,
+                    DialogResult result = MessageBox.Show("Apakah yakin untuk delete data?", "Confirmation", MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
