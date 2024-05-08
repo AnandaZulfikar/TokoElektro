@@ -57,49 +57,55 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(31, 223);
+            this.textBox3.BackColor = System.Drawing.Color.LightGray;
+            this.textBox3.Location = new System.Drawing.Point(30, 265);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.Size = new System.Drawing.Size(212, 20);
             this.textBox3.TabIndex = 30;
             // 
             // label_qty
             // 
             this.label_qty.AutoSize = true;
-            this.label_qty.Location = new System.Drawing.Point(28, 206);
+            this.label_qty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_qty.Location = new System.Drawing.Point(27, 247);
             this.label_qty.Name = "label_qty";
-            this.label_qty.Size = new System.Drawing.Size(29, 13);
+            this.label_qty.Size = new System.Drawing.Size(30, 15);
             this.label_qty.TabIndex = 29;
             this.label_qty.Text = "QTY";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(31, 178);
+            this.textBox2.BackColor = System.Drawing.Color.LightGray;
+            this.textBox2.Location = new System.Drawing.Point(30, 199);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(212, 20);
             this.textBox2.TabIndex = 28;
             // 
             // label_barang
             // 
             this.label_barang.AutoSize = true;
-            this.label_barang.Location = new System.Drawing.Point(28, 161);
+            this.label_barang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_barang.Location = new System.Drawing.Point(29, 183);
             this.label_barang.Name = "label_barang";
-            this.label_barang.Size = new System.Drawing.Size(41, 13);
+            this.label_barang.Size = new System.Drawing.Size(47, 15);
             this.label_barang.TabIndex = 27;
             this.label_barang.Text = "Barang";
             // 
             // textBox_idStruk
             // 
-            this.textBox_idStruk.Location = new System.Drawing.Point(31, 133);
+            this.textBox_idStruk.BackColor = System.Drawing.Color.LightGray;
+            this.textBox_idStruk.Location = new System.Drawing.Point(30, 138);
             this.textBox_idStruk.Name = "textBox_idStruk";
-            this.textBox_idStruk.Size = new System.Drawing.Size(100, 20);
+            this.textBox_idStruk.Size = new System.Drawing.Size(212, 20);
             this.textBox_idStruk.TabIndex = 26;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 116);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(27, 120);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.Size = new System.Drawing.Size(50, 15);
             this.label2.TabIndex = 25;
             this.label2.Text = "ID Struk";
             // 
@@ -108,7 +114,7 @@
             this.button_update.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button_update.FlatAppearance.BorderSize = 0;
             this.button_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_update.Location = new System.Drawing.Point(85, 426);
+            this.button_update.Location = new System.Drawing.Point(101, 398);
             this.button_update.Name = "button_update";
             this.button_update.Size = new System.Drawing.Size(75, 23);
             this.button_update.TabIndex = 24;
@@ -120,7 +126,7 @@
             this.button_simpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button_simpan.FlatAppearance.BorderSize = 0;
             this.button_simpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_simpan.Location = new System.Drawing.Point(4, 426);
+            this.button_simpan.Location = new System.Drawing.Point(20, 398);
             this.button_simpan.Name = "button_simpan";
             this.button_simpan.Size = new System.Drawing.Size(75, 23);
             this.button_simpan.TabIndex = 23;
@@ -132,7 +138,7 @@
             this.button_hapus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.button_hapus.FlatAppearance.BorderSize = 0;
             this.button_hapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_hapus.Location = new System.Drawing.Point(166, 426);
+            this.button_hapus.Location = new System.Drawing.Point(182, 398);
             this.button_hapus.Name = "button_hapus";
             this.button_hapus.Size = new System.Drawing.Size(75, 23);
             this.button_hapus.TabIndex = 22;
@@ -142,9 +148,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(205, 106);
+            this.dataGridView1.Location = new System.Drawing.Point(273, 118);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(377, 315);
+            this.dataGridView1.Size = new System.Drawing.Size(294, 303);
             this.dataGridView1.TabIndex = 21;
             // 
             // label5
@@ -159,17 +165,19 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(31, 267);
+            this.textBox4.BackColor = System.Drawing.Color.LightGray;
+            this.textBox4.Location = new System.Drawing.Point(30, 332);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.Size = new System.Drawing.Size(212, 20);
             this.textBox4.TabIndex = 33;
             // 
             // label_subtotal
             // 
             this.label_subtotal.AutoSize = true;
-            this.label_subtotal.Location = new System.Drawing.Point(28, 250);
+            this.label_subtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_subtotal.Location = new System.Drawing.Point(27, 314);
             this.label_subtotal.Name = "label_subtotal";
-            this.label_subtotal.Size = new System.Drawing.Size(49, 13);
+            this.label_subtotal.Size = new System.Drawing.Size(55, 15);
             this.label_subtotal.TabIndex = 32;
             this.label_subtotal.Text = "Sub total";
             // 
