@@ -67,6 +67,21 @@ namespace TokoElektro
                         reader.Read();
                         GlobalVar.username = reader.GetString(1);
 
+                        int idLogin = reader.GetInt32(0);
+
+                        reader.Close();
+
+                        string queryKaryawan = $"SELECT id FROM karyawan WHERE id_login = '{idLogin}'";
+                        SqlCommand commandKaryawan = new SqlCommand(queryKaryawan, connection);
+                        SqlDataReader readerKaryawan = commandKaryawan.ExecuteReader();
+
+                        if (readerKaryawan.Read())
+                        {
+                            GlobalVar.karyawan_id = readerKaryawan.GetInt32(0);
+                        }
+
+                        readerKaryawan.Close();
+
                         this.Hide();
                         DashboardKaryawan karyawan_dash = new DashboardKaryawan();
                         karyawan_dash.Show();
