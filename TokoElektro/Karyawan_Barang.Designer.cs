@@ -132,9 +132,9 @@
             this.label_hargaBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_hargaBarang.Location = new System.Drawing.Point(27, 181);
             this.label_hargaBarang.Name = "label_hargaBarang";
-            this.label_hargaBarang.Size = new System.Drawing.Size(37, 15);
+            this.label_hargaBarang.Size = new System.Drawing.Size(47, 15);
             this.label_hargaBarang.TabIndex = 17;
-            this.label_hargaBarang.Text = "Stok :";
+            this.label_hargaBarang.Text = "Harga :";
             // 
             // textBox_stokBarang
             // 
@@ -150,9 +150,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(27, 247);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 15);
+            this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 19;
-            this.label4.Text = "Harga :";
+            this.label4.Text = "Stok :";
             // 
             // Karyawan_Barang
             // 
