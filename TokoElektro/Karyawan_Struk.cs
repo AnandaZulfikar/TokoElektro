@@ -15,6 +15,9 @@ namespace TokoElektro
         public Karyawan_Struk()
         {
             InitializeComponent();
+            button_tambah.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_tambah.Width, button_tambah.Height, 20, 20));
+            button_detail.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_detail.Width, button_detail.Height, 20, 20));
+
         }
     }
 }

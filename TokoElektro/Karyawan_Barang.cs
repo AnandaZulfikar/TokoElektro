@@ -24,6 +24,10 @@ namespace TokoElektro
         public Karyawan_Barang()
         {
             InitializeComponent();
+            button_update.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_update.Width, button_update.Height, 20, 20));
+            button_simpan.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_simpan.Width, button_simpan.Height, 20, 20));
+            button_hapus.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_hapus.Width, button_hapus.Height, 20, 20));
+
             showData();
         }
 
