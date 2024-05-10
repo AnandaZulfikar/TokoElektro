@@ -53,7 +53,6 @@ namespace TokoElektro
                 // Panggil metode SetParameters untuk meneruskan semua parameter
                 (userControl as IAcceptParameters).SetParameters(parameters);
             }
-
             userControl.Show();
             userControl.BringToFront();
         }
@@ -258,7 +257,6 @@ namespace TokoElektro
 
         private void button_bayar_Click(object sender, EventArgs e)
         {
-            this.Hide();
             ShowUserControl<Karyawan_Transaksi_Add_Pay>(idstruk, subtotal);
         }
 

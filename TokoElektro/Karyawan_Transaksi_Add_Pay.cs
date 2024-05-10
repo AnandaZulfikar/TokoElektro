@@ -21,6 +21,25 @@ namespace TokoElektro
         {
             InitializeComponent();
         }
+        public void ShowUserControl<T>(params object[] parameters) where T : UserControl, new()
+        {
+            T userControl = this.Controls.OfType<T>().FirstOrDefault();
+            if (userControl == null)
+            {
+                userControl = new T();
+                userControl.Dock = DockStyle.Fill;
+                this.Controls.Add(userControl);
+            }
+
+            // Cek apakah user control memiliki metode SetParameters
+            if (userControl is IAcceptParameters)
+            {
+                // Panggil metode SetParameters untuk meneruskan semua parameter
+                (userControl as IAcceptParameters).SetParameters(parameters);
+            }
+            userControl.Show();
+            userControl.BringToFront();
+        }
 
         private void button_kembali_Click(object sender, EventArgs e)
         {
@@ -49,7 +68,7 @@ namespace TokoElektro
                         commandUpdateStruk.ExecuteNonQuery();
 
                         MessageBox.Show("Transaksi berhasil diproses");
-                        this.Hide();
+                        ShowUserControl<Karyawan_Struk>();
                         connection.Close();
                     }
                     catch (Exception ex)
