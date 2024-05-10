@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -87,32 +88,34 @@ namespace TokoElektro
                 connection.Close();
                 connection.Open();
 
-                string query = $"SELECT * FROM transaksi " +
-                    $"JOIN barang ON transaksi.id_barang = barang.id " +
-                    $"WHERE id_struk = {idstruk}";
+                string query = $"SELECT barang.nama, barang.harga, transaksi.quantity AS QTY, transaksi.sub_total AS Subtotal " +
+                               $"FROM transaksi " +
+                               $"JOIN barang ON transaksi.id_barang = barang.id " +
+                               $"WHERE id_struk = {idstruk}";
 
                 command = new SqlCommand(query, connection);
                 adapter = new SqlDataAdapter(command);
                 tabel = new DataTable();
                 adapter.Fill(tabel);
 
+                // Hitung subtotal
+                subtotal = 0;
                 foreach (DataRow row in tabel.Rows)
                 {
-                    // Menambahkan nilai kolom keempat dari setiap baris ke subtotal
-                    subtotal += Convert.ToInt32(row[4]);
-                    label_subtotal.Text = $"Subtotal : {subtotal.ToString()}";
+                    subtotal += Convert.ToInt32(row["Subtotal"]);
                 }
+                label_subtotal.Text = $"Subtotal : {subtotal.ToString("C", new CultureInfo("id-ID"))}";
 
+                // Atur urutan dan judul kolom
                 table_keranjang.DataSource = tabel;
-                table_keranjang.Columns[0].Visible = false;
-                table_keranjang.Columns[1].Visible = false;
-                table_keranjang.Columns[2].HeaderText = "A";
-                table_keranjang.Columns[3].Visible = false;
-                table_keranjang.Columns[4].Visible = false;
-                table_keranjang.Columns[5].Visible = false;
-                table_keranjang.Columns[6].HeaderText = "Nama Barang";
-                table_keranjang.Columns[7].Visible = false;
-                table_keranjang.Columns[8].HeaderText = "Harga";
+                table_keranjang.Columns["nama"].DisplayIndex = 0; // Nama Barang
+                table_keranjang.Columns["harga"].DisplayIndex = 1; // Harga
+                table_keranjang.Columns["QTY"].DisplayIndex = 2; // QTY
+                table_keranjang.Columns["Subtotal"].DisplayIndex = 3; // Subtotal
+                table_keranjang.Columns["QTY"].HeaderText = "QTY";
+                table_keranjang.Columns["Subtotal"].HeaderText = "Subtotal";
+                table_keranjang.Columns["nama"].HeaderText = "Nama Barang";
+                table_keranjang.Columns["harga"].HeaderText = "Harga";
 
                 connection.Close();
             }
@@ -121,6 +124,7 @@ namespace TokoElektro
                 MessageBox.Show("Error at:" + x);
             }
         }
+
 
         private void tambah_barang()
         {
@@ -151,6 +155,11 @@ namespace TokoElektro
                     if (quantity > stok)
                     {
                         MessageBox.Show("Stok barang tidak mencukupi");
+                        return;
+                    }
+                    if (quantity <= 0)
+                    {
+                        MessageBox.Show("tidak valid");
                         return;
                     }
 
