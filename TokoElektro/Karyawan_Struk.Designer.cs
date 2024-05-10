@@ -30,10 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.button_tambah = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.table_struk = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.button_detail = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button_refresh = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.table_struk)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -57,14 +59,16 @@
             this.button_tambah.TabIndex = 12;
             this.button_tambah.Text = "Tambah";
             this.button_tambah.UseVisualStyleBackColor = false;
+            this.button_tambah.Click += new System.EventHandler(this.button_tambah_Click);
             // 
-            // dataGridView1
+            // table_struk
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 106);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(540, 297);
-            this.dataGridView1.TabIndex = 11;
+            this.table_struk.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.table_struk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.table_struk.Location = new System.Drawing.Point(27, 106);
+            this.table_struk.Name = "table_struk";
+            this.table_struk.Size = new System.Drawing.Size(540, 297);
+            this.table_struk.TabIndex = 11;
             // 
             // label2
             // 
@@ -88,18 +92,43 @@
             this.button_detail.Text = "Detail";
             this.button_detail.UseVisualStyleBackColor = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(241, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 16);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "idkaryawan";
+            // 
+            // button_refresh
+            // 
+            this.button_refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button_refresh.FlatAppearance.BorderSize = 0;
+            this.button_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_refresh.Location = new System.Drawing.Point(244, 414);
+            this.button_refresh.Name = "button_refresh";
+            this.button_refresh.Size = new System.Drawing.Size(75, 23);
+            this.button_refresh.TabIndex = 16;
+            this.button_refresh.Text = "Refresh";
+            this.button_refresh.UseVisualStyleBackColor = false;
+            this.button_refresh.Click += new System.EventHandler(this.button_refresh_Click);
+            // 
             // Karyawan_Struk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button_refresh);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button_detail);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button_tambah);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.table_struk);
             this.Controls.Add(this.label1);
             this.Name = "Karyawan_Struk";
             this.Size = new System.Drawing.Size(595, 453);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table_struk)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,8 +138,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_tambah;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView table_struk;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button_detail;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button_refresh;
     }
 }
