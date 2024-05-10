@@ -108,6 +108,8 @@
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalVar.cs" />
+    <Compile Include="IAcceptIdStruk.cs" />
+    <Compile Include="IAcceptParameters.cs" />
     <Compile Include="Karyawan_Barang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,11 +128,23 @@
     <Compile Include="Karyawan_Struk.Designer.cs">
       <DependentUpon>Karyawan_Struk.cs</DependentUpon>
     </Compile>
+    <Compile Include="Karyawan_Transaksi_Add.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Karyawan_Transaksi_Add.Designer.cs">
+      <DependentUpon>Karyawan_Transaksi_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Karyawan_Transaksi.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Karyawan_Transaksi.Designer.cs">
       <DependentUpon>Karyawan_Transaksi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Karyawan_Transaksi_Add_Pay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Karyawan_Transaksi_Add_Pay.Designer.cs">
+      <DependentUpon>Karyawan_Transaksi_Add_Pay.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -165,8 +179,14 @@
     <EmbeddedResource Include="Karyawan_Struk.resx">
       <DependentUpon>Karyawan_Struk.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Karyawan_Transaksi_Add.resx">
+      <DependentUpon>Karyawan_Transaksi_Add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Karyawan_Transaksi.resx">
       <DependentUpon>Karyawan_Transaksi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Karyawan_Transaksi_Add_Pay.resx">
+      <DependentUpon>Karyawan_Transaksi_Add_Pay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
