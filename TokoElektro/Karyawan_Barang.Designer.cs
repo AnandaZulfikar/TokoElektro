@@ -39,6 +39,7 @@
             this.label_hargaBarang = new System.Windows.Forms.Label();
             this.textBox_stokBarang = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.button_refresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,10 +155,24 @@
             this.label4.TabIndex = 19;
             this.label4.Text = "Stok :";
             // 
+            // button_refresh
+            // 
+            this.button_refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_refresh.FlatAppearance.BorderSize = 0;
+            this.button_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_refresh.Location = new System.Drawing.Point(182, 87);
+            this.button_refresh.Name = "button_refresh";
+            this.button_refresh.Size = new System.Drawing.Size(75, 23);
+            this.button_refresh.TabIndex = 21;
+            this.button_refresh.Text = "Refresh";
+            this.button_refresh.UseVisualStyleBackColor = false;
+            this.button_refresh.Click += new System.EventHandler(this.button_refresh_Click);
+            // 
             // Karyawan_Barang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button_refresh);
             this.Controls.Add(this.textBox_stokBarang);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox_hargaBarang);
@@ -190,5 +205,6 @@
         private System.Windows.Forms.Label label_hargaBarang;
         private System.Windows.Forms.TextBox textBox_stokBarang;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button_refresh;
     }
 }

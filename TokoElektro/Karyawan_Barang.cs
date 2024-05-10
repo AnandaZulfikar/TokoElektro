@@ -219,5 +219,10 @@ namespace TokoElektro
         {
             deleteData();
         }
+
+        private void button_refresh_Click(object sender, EventArgs e)
+        {
+            showData();
+        }
     }
 }
