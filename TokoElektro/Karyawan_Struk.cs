@@ -30,7 +30,7 @@ namespace TokoElektro
         }
 
         // func
-        public void ShowUserControl<T>(int id_struk = -1) where T : UserControl, new()
+        public void ShowUserControl<T>(params object[] parameters) where T : UserControl, new()
         {
             T userControl = this.Controls.OfType<T>().FirstOrDefault();
             if (userControl == null)
@@ -40,16 +40,16 @@ namespace TokoElektro
                 this.Controls.Add(userControl);
             }
 
-            // Cek apakah user control memiliki metode SetIdStruk
-            if (userControl is IAcceptIdStruk && id_struk != -1)
+            // Cek apakah user control memiliki metode SetParameters
+            if (userControl is IAcceptParameters)
             {
-                // Panggil metode SetIdStruk untuk meneruskan id_struk
-                (userControl as IAcceptIdStruk).SetIdStruk(id_struk);
+                // Panggil metode SetParameters untuk meneruskan semua parameter
+                (userControl as IAcceptParameters).SetParameters(parameters);
             }
-
             userControl.Show();
             userControl.BringToFront();
         }
+
 
         public void createStruk()
         {
@@ -73,7 +73,7 @@ namespace TokoElektro
                 MessageBox.Show(e.Message);
             }
         }
-        
+
         public void showStruk()
         {
             try
@@ -81,7 +81,7 @@ namespace TokoElektro
                 connection.Close();
                 connection.Open();
 
-                string query = "SELECT * FROM struk";
+                string query = "SELECT * FROM struk WHERE bayar > 0";
 
                 command = new SqlCommand(query, connection);
                 adapter = new SqlDataAdapter(command);
@@ -91,10 +91,10 @@ namespace TokoElektro
                 table_struk.DataSource = tabel;
                 table_struk.Columns[0].HeaderText = "ID";
                 table_struk.Columns[1].HeaderText = "ID Karyawan";
-                table_struk.Columns[2].HeaderText = "tanggal";
-                table_struk.Columns[3].HeaderText = "total";
-                table_struk.Columns[4].HeaderText = "bayar";
-                table_struk.Columns[5].HeaderText = "kembali";
+                table_struk.Columns[2].HeaderText = "Tanggal";
+                table_struk.Columns[3].HeaderText = "Total";
+                table_struk.Columns[4].HeaderText = "Bayar";
+                table_struk.Columns[5].HeaderText = "Kembali";
 
                 connection.Close();
             }
@@ -103,6 +103,7 @@ namespace TokoElektro
                 MessageBox.Show("Error at:" + x);
             }
         }
+
         // end func
 
         private void button_tambah_Click(object sender, EventArgs e)
@@ -113,6 +114,11 @@ namespace TokoElektro
         private void button_refresh_Click(object sender, EventArgs e)
         {
             showStruk();
+        }
+
+        private void button_detail_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

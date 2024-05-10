@@ -91,6 +91,7 @@
             this.button_detail.TabIndex = 14;
             this.button_detail.Text = "Detail";
             this.button_detail.UseVisualStyleBackColor = false;
+            this.button_detail.Click += new System.EventHandler(this.button_detail_Click);
             // 
             // label3
             // 
