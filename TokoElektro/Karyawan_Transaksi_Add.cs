@@ -13,7 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TokoElektro
 {
-    public partial class Karyawan_Transaksi_Add : UserControl, IAcceptIdStruk
+    public partial class Karyawan_Transaksi_Add : UserControl, IAcceptParameters
     {
         public SqlConnection connection = new SqlConnection(dbconfig.conn);
         public SqlCommand command;
@@ -33,9 +33,10 @@ namespace TokoElektro
             button_hapus.Visible = false;
             button_bayar.Visible = false;
         }
-        public void SetIdStruk(int id_struk)
+        
+        public void SetParameters(params object[] parameters)
         {
-            idstruk = id_struk;
+            idstruk = Convert.ToInt32(parameters[0].ToString());
             label_test_id_struk.Text = $"Struk ID : {Convert.ToString(idstruk)}";
         }
         public void ShowUserControl<T>(params object[] parameters) where T : UserControl, new()
