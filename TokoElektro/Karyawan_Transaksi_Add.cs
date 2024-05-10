@@ -201,7 +201,7 @@ namespace TokoElektro
                 {
                     int id_transaksi = Convert.ToInt32(table_keranjang.CurrentRow.Cells[0].Value);
                     int id_barang = Convert.ToInt32(table_keranjang.CurrentRow.Cells[1].Value);
-                    int quantity = Convert.ToInt32(table_keranjang.CurrentRow.Cells[2].Value);
+                    int quantity = Convert.ToInt32(table_keranjang.CurrentRow.Cells[3].Value);
 
                     try
                     {
