@@ -106,7 +106,7 @@ namespace TokoElektro
                 table_keranjang.DataSource = tabel;
                 table_keranjang.Columns[0].Visible = false;
                 table_keranjang.Columns[1].Visible = false;
-                table_keranjang.Columns[2].Visible = false;
+                table_keranjang.Columns[2].HeaderText = "A";
                 table_keranjang.Columns[3].Visible = false;
                 table_keranjang.Columns[4].Visible = false;
                 table_keranjang.Columns[5].Visible = false;
@@ -130,14 +130,29 @@ namespace TokoElektro
                 {
                     connection.Open();
 
-                    // Ambil harga barang dari database
-                    string queryHarga = $"SELECT harga FROM barang WHERE id = '{comboBox_barang.SelectedValue}'";
-                    SqlCommand commandHarga = new SqlCommand(queryHarga, connection);
-                    int harga = Convert.ToInt32(commandHarga.ExecuteScalar());
+                    // Ambil harga dan stok barang dari database
+                    string queryHargaStok = $"SELECT harga, stok FROM barang WHERE id = '{comboBox_barang.SelectedValue}'";
+                    SqlCommand commandHargaStok = new SqlCommand(queryHargaStok, connection);
+                    SqlDataReader reader = commandHargaStok.ExecuteReader();
+                    int harga = 0;
+                    int stok = 0;
+                    if (reader.Read())
+                    {
+                        harga = Convert.ToInt32(reader["harga"]);
+                        stok = Convert.ToInt32(reader["stok"]);
+                    }
+                    reader.Close();
 
                     // Hitung subtotal
                     int quantity = Convert.ToInt32(textBox_qty.Text);
                     int subtotal = harga * quantity;
+
+                    // Pastikan stok mencukupi
+                    if (quantity > stok)
+                    {
+                        MessageBox.Show("Stok barang tidak mencukupi");
+                        return;
+                    }
 
                     // Masukkan data ke tabel transaksi
                     string queryInsert = $"INSERT INTO transaksi (id_barang, id_struk, quantity, sub_total) " +
@@ -148,7 +163,12 @@ namespace TokoElektro
                     SqlCommand commandInsert = new SqlCommand(queryInsert, connection);
                     commandInsert.ExecuteNonQuery();
 
-                    // Perbarui total harga pada tabel struk
+                    // Update stok barang di tabel barang
+                    string queryUpdateStok = $"UPDATE barang SET stok = stok - {quantity} WHERE id = '{comboBox_barang.SelectedValue}'";
+                    SqlCommand commandUpdateStok = new SqlCommand(queryUpdateStok, connection);
+                    commandUpdateStok.ExecuteNonQuery();
+
+                    // Updatee total harga pada tabel struk
                     string queryUpdateStruk = $"UPDATE struk SET total = (SELECT SUM(sub_total) FROM transaksi WHERE id_struk = '{idstruk}') " +
                                               $"WHERE id = '{idstruk}'";
                     SqlCommand commandUpdateStruk = new SqlCommand(queryUpdateStruk, connection);
@@ -172,29 +192,37 @@ namespace TokoElektro
             }
         }
 
-
         private void hapus_barang()
         {
             if (table_keranjang.CurrentRow.Selected)
             {
-                DialogResult result = MessageBox.Show("Apakah yakin untuk menghapusnya dari keranjang?", "Confirmation", MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Apakah yakin untuk menghapusnya dari keranjang?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    sql = "delete from transaksi where id = " + Convert.ToInt32(table_keranjang.CurrentRow.Cells[0].Value); ;
-                    command = new SqlCommand(sql, connection);
+                    int id_transaksi = Convert.ToInt32(table_keranjang.CurrentRow.Cells[0].Value);
+                    int id_barang = Convert.ToInt32(table_keranjang.CurrentRow.Cells[1].Value);
+                    int quantity = Convert.ToInt32(table_keranjang.CurrentRow.Cells[2].Value);
 
                     try
                     {
-                        connection.Close();
                         connection.Open();
-                        command.ExecuteNonQuery();
-                        MessageBox.Show("Barang barang berhasil terdelete");
+
+                        // Hapus data transaksi
+                        string queryDeleteTransaksi = $"DELETE FROM transaksi WHERE id = {id_transaksi}";
+                        SqlCommand commandDeleteTransaksi = new SqlCommand(queryDeleteTransaksi, connection);
+                        commandDeleteTransaksi.ExecuteNonQuery();
+
+                        // Update stok barang di tabel barang
+                        string queryUpdateStok = $"UPDATE barang SET stok = stok + {quantity} WHERE id = {id_barang}";
+                        SqlCommand commandUpdateStok = new SqlCommand(queryUpdateStok, connection);
+                        commandUpdateStok.ExecuteNonQuery();
+
+                        MessageBox.Show("Barang berhasil dihapus dari keranjang");
                         showData();
                     }
                     catch (Exception x)
                     {
-                        MessageBox.Show("Error at : " + x);
+                        MessageBox.Show("Error: " + x.Message);
                     }
                     finally
                     {
@@ -207,6 +235,7 @@ namespace TokoElektro
                 MessageBox.Show("Pilih barang terlebih dahulu!");
             }
         }
+
 
         private void button_tambah_Click(object sender, EventArgs e)
         {
