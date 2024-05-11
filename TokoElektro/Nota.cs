@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 /**
  * example usage:
@@ -38,7 +39,6 @@ namespace TokoElektro
 
             private void GetContentFromDatabase(int idStruk)
             {
-                // Query untuk mendapatkan detail transaksi dan barang
                 string query = $"SELECT struk.id AS id_struk, struk.tanggal, struk.total, struk.bayar, struk.kembali, " +
                                $"karyawan.nama AS nama_karyawan, " +
                                $"barang.nama AS nama_barang, barang.harga AS harga_barang, " +
@@ -58,40 +58,41 @@ namespace TokoElektro
 
                         if (reader.Read())
                         {
-                            // Ambil data transaksi
                             string idTransaksi = reader["id_struk"].ToString();
                             string tanggal = reader["tanggal"].ToString();
-                            string total = reader["total"].ToString();
-                            string bayar = reader["bayar"].ToString();
-                            string kembali = reader["kembali"].ToString();
+                            int total = Convert.ToInt32(reader["total"]);
+                            int bayar = Convert.ToInt32(reader["bayar"]);
+                            int kembali = Convert.ToInt32(reader["kembali"]);
                             string namaKaryawan = reader["nama_karyawan"].ToString();
 
-                            // Inisialisasi konten nota
-                            content = $"========= Nota Transaksi =========\n\n" +
-                                      $"ID Transaksi: {idTransaksi}\n" +
-                                      $"Tanggal: {tanggal}\n" +
-                                      $"Karyawan: {namaKaryawan}\n" +
-                                      "------------------------------------------------------------\n" +
-                                      "Nama Barang         Harga   Qty  Subtotal\n" +
-                                      "------------------------------------------------------------\n";
+                            // Konten nota
+                            var table = new Table("No", "Nama Barang", "Harga", "QTY", "Subtotal");
+                            int counter = 1;
 
-                            // Nambah detail barang
+                            // Detail barang
                             do
                             {
                                 string namaBarang = reader["nama_barang"].ToString();
-                                string hargaBarang = reader["harga_barang"].ToString();
+                                string hargaBarang = Convert.ToInt32(reader["harga_barang"]).ToString("C", new CultureInfo("id-ID"));
                                 string qty = reader["quantity"].ToString();
-                                string subtotal = reader["sub_total"].ToString();
+                                string subtotal = Convert.ToInt32(reader["sub_total"]).ToString("C", new CultureInfo("id-ID"));
 
-                                // Mambah detail barang ke dalam konten
-                                content += $"{namaBarang.PadRight(20)}         {hargaBarang.PadRight(7)}   {qty.PadRight(5)}  {subtotal}\n";
+                                // Baris ke tabel
+                                table.AddRow(counter++, namaBarang, hargaBarang, qty, subtotal);
                             } while (reader.Read());
 
+                            // Tabel transaksi
+                            content = $"========= Nota Transaksi =========\n\n" +
+                                      $"ID Transaksi: {idTransaksi}\n" +
+                                      $"Tanggal: {tanggal}\n" +
+                                      $"Karyawan: {namaKaryawan}\n";
+
+                            content += table.ToString();
+
                             // Footer
-                            content += "------------------------------------------------------------\n";
-                            content += $"Total: Rp. {total}\n";
-                            content += $"Bayar: Rp. {bayar}\n";
-                            content += $"Kembali: Rp. {kembali}\n";
+                            content += $"\nTotal: Rp. {total.ToString("C", new CultureInfo("id-ID"))}\n";
+                            content += $"Bayar: Rp. {bayar.ToString("C", new CultureInfo("id-ID"))}\n";
+                            content += $"Kembali: Rp. {kembali.ToString("C", new CultureInfo("id-ID"))}\n";
                             content += "=================================";
                         }
 
@@ -99,6 +100,7 @@ namespace TokoElektro
                     }
                 }
             }
+
 
 
             public void PrintNota()
