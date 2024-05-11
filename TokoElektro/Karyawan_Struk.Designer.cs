@@ -53,11 +53,11 @@
             this.button_tambah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button_tambah.FlatAppearance.BorderSize = 0;
             this.button_tambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_tambah.Location = new System.Drawing.Point(492, 77);
+            this.button_tambah.Location = new System.Drawing.Point(480, 77);
             this.button_tambah.Name = "button_tambah";
-            this.button_tambah.Size = new System.Drawing.Size(75, 23);
+            this.button_tambah.Size = new System.Drawing.Size(87, 23);
             this.button_tambah.TabIndex = 12;
-            this.button_tambah.Text = "Tambah";
+            this.button_tambah.Text = "Buat transaksi";
             this.button_tambah.UseVisualStyleBackColor = false;
             this.button_tambah.Click += new System.EventHandler(this.button_tambah_Click);
             // 
