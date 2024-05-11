@@ -10,6 +10,8 @@ namespace TokoElektro
     {
         [System.Runtime.InteropServices.DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         public static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
-        // example usage: button_update.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_update.Width, button_update.Height, 20, 20));
+        // example usage: qwe.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, qwe.Width, qwe.Height, 20, 20));
+        // qwe ganti jadi nama komponennya
+
     }
 }

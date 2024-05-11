@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button_transaksi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button_Logout = new System.Windows.Forms.Button();
             this.button_struk = new System.Windows.Forms.Button();
@@ -41,7 +40,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Blue;
-            this.panel1.Controls.Add(this.button_transaksi);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button_Logout);
             this.panel1.Controls.Add(this.button_struk);
@@ -52,19 +50,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(189, 450);
             this.panel1.TabIndex = 3;
-            // 
-            // button_transaksi
-            // 
-            this.button_transaksi.BackColor = System.Drawing.Color.AliceBlue;
-            this.button_transaksi.FlatAppearance.BorderSize = 0;
-            this.button_transaksi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_transaksi.Location = new System.Drawing.Point(3, 231);
-            this.button_transaksi.Name = "button_transaksi";
-            this.button_transaksi.Size = new System.Drawing.Size(183, 49);
-            this.button_transaksi.TabIndex = 7;
-            this.button_transaksi.Text = "Transaksi";
-            this.button_transaksi.UseVisualStyleBackColor = false;
-            this.button_transaksi.Click += new System.EventHandler(this.button_transaksi_Click);
             // 
             // label1
             // 
@@ -146,7 +131,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button_transaksi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_Logout;
         private System.Windows.Forms.Button button_struk;

@@ -24,6 +24,10 @@ namespace TokoElektro
         public Karyawan_Barang()
         {
             InitializeComponent();
+            button_update.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_update.Width, button_update.Height, 20, 20));
+            button_simpan.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_simpan.Width, button_simpan.Height, 20, 20));
+            button_hapus.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_hapus.Width, button_hapus.Height, 20, 20));
+
             showData();
         }
 
@@ -41,7 +45,7 @@ namespace TokoElektro
                 adapter.Fill(tabel);
 
                 dataGridView1.DataSource = tabel;
-                dataGridView1.Columns[0].HeaderText = "ID";
+                dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[1].HeaderText = "Nama Barang";
                 dataGridView1.Columns[2].HeaderText = "Stok";
                 dataGridView1.Columns[3].HeaderText = "Harga";
@@ -214,6 +218,11 @@ namespace TokoElektro
         private void button_hapus_Click(object sender, EventArgs e)
         {
             deleteData();
+        }
+
+        private void button_refresh_Click(object sender, EventArgs e)
+        {
+            showData();
         }
     }
 }

@@ -10,5 +10,7 @@ namespace TokoElektro
     {
         public static string username { get; set; }
         public static string name { get; set; }
+        public static int karyawan_id {  get; set; }
+        public static int? temp_struk_id {  get; set; }
     }
 }
