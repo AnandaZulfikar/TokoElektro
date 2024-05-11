@@ -12,13 +12,18 @@ using System.Windows.Forms;
 
 namespace TokoElektro
 {
-    public partial class Karyawan_Struk : UserControl
+    public partial class Karyawan_Struk : UserControl, IAcceptParameters
     {
         public SqlConnection connection = new SqlConnection(dbconfig.conn);
         public SqlCommand command;
         public SqlDataAdapter adapter;
         public DataTable tabel;
         public SqlDataReader reader;
+
+        public void SetParameters(params object[] parameters)
+        {
+            
+        }
 
         public Karyawan_Struk()
         {
@@ -104,6 +109,36 @@ namespace TokoElektro
             }
         }
 
+        public void showBon()
+        {
+            if (table_struk.CurrentRow.Selected)
+            {
+                DialogResult result = MessageBox.Show("Apakah yakin ingin print struk?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    int id_struk = Convert.ToInt32(table_struk.CurrentRow.Cells[0].Value);
+
+                    try
+                    {
+                        Nota.NotaPrinter nota = new Nota.NotaPrinter(id_struk);
+                        nota.PrintNota();
+                    }
+                    catch (Exception x)
+                    {
+                        MessageBox.Show("Error: " + x.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Pilih barang terlebih dahulu!");
+            }
+        }
+
         // end func
 
         private void button_tambah_Click(object sender, EventArgs e)
@@ -118,7 +153,8 @@ namespace TokoElektro
 
         private void button_detail_Click(object sender, EventArgs e)
         {
-
+            showBon();
         }
+
     }
 }
