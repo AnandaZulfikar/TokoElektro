@@ -20,7 +20,6 @@ namespace TokoElektro
             button_home.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_home.Width, button_home.Height, 8, 8));
             button_barang.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_barang.Width, button_barang.Height, 8, 8));
             button_struk.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_struk.Width, button_struk.Height, 8, 8));
-            button_transaksi.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_transaksi.Width, button_transaksi.Height, 8, 8));
 
             ShowUserControl<Karyawan_Home>();
         }
@@ -57,11 +56,6 @@ namespace TokoElektro
         private void button_struk_Click(object sender, EventArgs e)
         {
             ShowUserControl<Karyawan_Struk>();
-        }
-
-        private void button_transaksi_Click(object sender, EventArgs e)
-        {
-            ShowUserControl<Karyawan_Transaksi>();
         }
     }
 }

@@ -134,12 +134,6 @@
     <Compile Include="Karyawan_Transaksi_Add.Designer.cs">
       <DependentUpon>Karyawan_Transaksi_Add.cs</DependentUpon>
     </Compile>
-    <Compile Include="Karyawan_Transaksi.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Karyawan_Transaksi.Designer.cs">
-      <DependentUpon>Karyawan_Transaksi.cs</DependentUpon>
-    </Compile>
     <Compile Include="Karyawan_Transaksi_Add_Pay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -183,9 +177,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Karyawan_Transaksi_Add.resx">
       <DependentUpon>Karyawan_Transaksi_Add.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Karyawan_Transaksi.resx">
-      <DependentUpon>Karyawan_Transaksi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Karyawan_Transaksi_Add_Pay.resx">
       <DependentUpon>Karyawan_Transaksi_Add_Pay.cs</DependentUpon>
