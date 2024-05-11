@@ -45,7 +45,7 @@ namespace TokoElektro
                 adapter.Fill(tabel);
 
                 dataGridView1.DataSource = tabel;
-                dataGridView1.Columns[0].HeaderText = "ID";
+                dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[1].HeaderText = "Nama Barang";
                 dataGridView1.Columns[2].HeaderText = "Stok";
                 dataGridView1.Columns[3].HeaderText = "Harga";
