@@ -73,9 +73,10 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 24);
+            this.label1.Size = new System.Drawing.Size(173, 48);
             this.label1.TabIndex = 6;
-            this.label1.Text = "SIM PEMBELIAN";
+            this.label1.Text = "SIM PEMBELIAN \r\nELEKTRONIK";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button_Logout
             // 
