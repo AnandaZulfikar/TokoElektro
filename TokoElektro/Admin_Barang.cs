@@ -23,6 +23,10 @@ namespace TokoElektro
         public Admin_Barang()
         {
             InitializeComponent();
+            button_update.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_update.Width, button_update.Height, 20, 20));
+            button_tambah.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_tambah.Width, button_tambah.Height, 20, 20));
+            button_hapus.Region = System.Drawing.Region.FromHrgn(Rounded.CreateRoundRectRgn(0, 0, button_hapus.Width, button_hapus.Height, 20, 20));
+
             showData();
         }
 
@@ -40,7 +44,7 @@ namespace TokoElektro
                 adapter.Fill(tabel);
 
                 dataGridView1.DataSource = tabel;
-                dataGridView1.Columns[0].HeaderText = "ID";
+                dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[1].HeaderText = "Nama Barang";
                 dataGridView1.Columns[2].HeaderText = "Stok";
                 dataGridView1.Columns[3].HeaderText = "Harga";
@@ -186,6 +190,37 @@ namespace TokoElektro
             }
         }
 
+        public void searchData()
+        {
+            if (!string.IsNullOrEmpty(txtSearch.Text))
+            {
+                try
+                {
+                    string sql = "select * from barang where nama like '%' + @search + '%'";
+
+                    command = new SqlCommand(sql, connection);
+                    command.Parameters.AddWithValue("@search", txtSearch.Text);
+                    adapter = new SqlDataAdapter(command);
+                    tabel = new DataTable();
+                    adapter.Fill(tabel);
+
+                    dataGridView1.DataSource = tabel;
+                    dataGridView1.Columns[0].HeaderText = "ID";
+                    dataGridView1.Columns[1].HeaderText = "Nama Barang";
+                    dataGridView1.Columns[2].HeaderText = "Stok";
+                    dataGridView1.Columns[3].HeaderText = "Harga";
+                }
+                catch (Exception x)
+                {
+                    MessageBox.Show("Error at:" + x);
+                }
+            }
+            else
+            {
+                showData();
+            }
+        }
+
         private void button_tambah_Click(object sender, EventArgs e)
         {
             insertData();
@@ -199,6 +234,16 @@ namespace TokoElektro
         private void button_hapus_Click(object sender, EventArgs e)
         {
             deleteData();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            searchData();
+        }
+
+        private void button_refresh_Click(object sender, EventArgs e)
+        {
+            showData();
         }
     }
 }
