@@ -31,20 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin_Home));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label_total = new System.Windows.Forms.Label();
+            this.label_total_barang = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label_total_struk = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label_total_karyawan = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -63,7 +63,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Controls.Add(this.label_total);
+            this.panel1.Controls.Add(this.label_total_barang);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel4);
@@ -72,16 +72,16 @@
             this.panel1.Size = new System.Drawing.Size(241, 137);
             this.panel1.TabIndex = 4;
             // 
-            // label_total
+            // label_total_barang
             // 
-            this.label_total.AutoSize = true;
-            this.label_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_total.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label_total.Location = new System.Drawing.Point(128, 77);
-            this.label_total.Name = "label_total";
-            this.label_total.Size = new System.Drawing.Size(55, 29);
-            this.label_total.TabIndex = 3;
-            this.label_total.Text = "150";
+            this.label_total_barang.AutoSize = true;
+            this.label_total_barang.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_total_barang.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_total_barang.Location = new System.Drawing.Point(128, 77);
+            this.label_total_barang.Name = "label_total_barang";
+            this.label_total_barang.Size = new System.Drawing.Size(55, 29);
+            this.label_total_barang.TabIndex = 3;
+            this.label_total_barang.Text = "150";
             // 
             // label3
             // 
@@ -117,25 +117,25 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.label_total_struk);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(321, 82);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(241, 137);
             this.panel2.TabIndex = 5;
             // 
-            // label4
+            // label_total_struk
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(128, 77);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 29);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "150";
+            this.label_total_struk.AutoSize = true;
+            this.label_total_struk.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_total_struk.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_total_struk.Location = new System.Drawing.Point(128, 77);
+            this.label_total_struk.Name = "label_total_struk";
+            this.label_total_struk.Size = new System.Drawing.Size(55, 29);
+            this.label_total_struk.TabIndex = 3;
+            this.label_total_struk.Text = "150";
             // 
             // label5
             // 
@@ -155,23 +155,14 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label6.Location = new System.Drawing.Point(6, 8);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 29);
+            this.label6.Size = new System.Drawing.Size(73, 29);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Transaksi";
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Location = new System.Drawing.Point(3, 49);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(94, 85);
-            this.panel3.TabIndex = 0;
+            this.label6.Text = "Struk";
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.label_total_karyawan);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.label9);
             this.panel5.Controls.Add(this.panel6);
@@ -180,16 +171,16 @@
             this.panel5.Size = new System.Drawing.Size(241, 137);
             this.panel5.TabIndex = 5;
             // 
-            // label7
+            // label_total_karyawan
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(128, 77);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 29);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "150";
+            this.label_total_karyawan.AutoSize = true;
+            this.label_total_karyawan.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_total_karyawan.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_total_karyawan.Location = new System.Drawing.Point(128, 77);
+            this.label_total_karyawan.Name = "label_total_karyawan";
+            this.label_total_karyawan.Size = new System.Drawing.Size(55, 29);
+            this.label_total_karyawan.TabIndex = 3;
+            this.label_total_karyawan.Text = "150";
             // 
             // label8
             // 
@@ -222,6 +213,15 @@
             this.panel6.Size = new System.Drawing.Size(94, 85);
             this.panel6.TabIndex = 0;
             // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Location = new System.Drawing.Point(3, 49);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(94, 85);
+            this.panel3.TabIndex = 4;
+            // 
             // Admin_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,16 +250,16 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label_total;
+        private System.Windows.Forms.Label label_total_barang;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label_total_struk;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label_total_karyawan;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel3;
     }
 }

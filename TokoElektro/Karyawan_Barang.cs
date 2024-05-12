@@ -224,5 +224,41 @@ namespace TokoElektro
         {
             showData();
         }
+
+        public void searchData()
+        {
+            if (!string.IsNullOrEmpty(txtSearch.Text))
+            {
+                try
+                {
+                    string sql = "select * from barang where nama like '%' + @search + '%'";
+
+                    command = new SqlCommand(sql, connection);
+                    command.Parameters.AddWithValue("@search", txtSearch.Text);
+                    adapter = new SqlDataAdapter(command);
+                    tabel = new DataTable();
+                    adapter.Fill(tabel);
+
+                    dataGridView1.DataSource = tabel;
+                    dataGridView1.Columns[0].HeaderText = "ID";
+                    dataGridView1.Columns[1].HeaderText = "Nama Barang";
+                    dataGridView1.Columns[2].HeaderText = "Stok";
+                    dataGridView1.Columns[3].HeaderText = "Harga";
+                }
+                catch (Exception x)
+                {
+                    MessageBox.Show("Error at:" + x);
+                }
+            }
+            else
+            {
+                showData();
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            searchData();
+        }
     }
 }

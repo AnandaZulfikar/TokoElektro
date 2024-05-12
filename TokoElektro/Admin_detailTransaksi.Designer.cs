@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin_detailTransaksi));
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button_hapus = new System.Windows.Forms.Button();
-            this.button_view = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.table_struk = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button_refresh = new System.Windows.Forms.Button();
+            this.button_detail = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.table_struk)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -47,57 +46,62 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "WELCOME ADMIN";
             // 
-            // dataGridView1
+            // table_struk
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 106);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(540, 315);
-            this.dataGridView1.TabIndex = 9;
+            this.table_struk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.table_struk.Location = new System.Drawing.Point(27, 106);
+            this.table_struk.Name = "table_struk";
+            this.table_struk.Size = new System.Drawing.Size(540, 297);
+            this.table_struk.TabIndex = 9;
             // 
-            // label2
+            // label3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 16);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Detail Transaksi :";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(27, 77);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 18);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Struk :";
             // 
-            // button_hapus
+            // button_refresh
             // 
-            this.button_hapus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button_hapus.Location = new System.Drawing.Point(492, 71);
-            this.button_hapus.Name = "button_hapus";
-            this.button_hapus.Size = new System.Drawing.Size(75, 23);
-            this.button_hapus.TabIndex = 11;
-            this.button_hapus.Text = "Hapus";
-            this.button_hapus.UseVisualStyleBackColor = false;
+            this.button_refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button_refresh.FlatAppearance.BorderSize = 0;
+            this.button_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_refresh.Location = new System.Drawing.Point(244, 414);
+            this.button_refresh.Name = "button_refresh";
+            this.button_refresh.Size = new System.Drawing.Size(75, 23);
+            this.button_refresh.TabIndex = 17;
+            this.button_refresh.Text = "Refresh";
+            this.button_refresh.UseVisualStyleBackColor = false;
+            this.button_refresh.Click += new System.EventHandler(this.button_refresh_Click);
             // 
-            // button_view
+            // button_detail
             // 
-            this.button_view.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button_view.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_view.BackgroundImage")));
-            this.button_view.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_view.Location = new System.Drawing.Point(461, 71);
-            this.button_view.Name = "button_view";
-            this.button_view.Size = new System.Drawing.Size(25, 23);
-            this.button_view.TabIndex = 12;
-            this.button_view.UseVisualStyleBackColor = false;
+            this.button_detail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_detail.FlatAppearance.BorderSize = 0;
+            this.button_detail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_detail.Location = new System.Drawing.Point(492, 409);
+            this.button_detail.Name = "button_detail";
+            this.button_detail.Size = new System.Drawing.Size(75, 23);
+            this.button_detail.TabIndex = 18;
+            this.button_detail.Text = "Detail & Print";
+            this.button_detail.UseVisualStyleBackColor = false;
+            this.button_detail.Click += new System.EventHandler(this.button_detail_Click);
             // 
             // Admin_detailTransaksi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button_view);
-            this.Controls.Add(this.button_hapus);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button_detail);
+            this.Controls.Add(this.button_refresh);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.table_struk);
             this.Controls.Add(this.label1);
             this.Name = "Admin_detailTransaksi";
             this.Size = new System.Drawing.Size(595, 453);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table_struk)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,9 +110,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button_hapus;
-        private System.Windows.Forms.Button button_view;
+        private System.Windows.Forms.DataGridView table_struk;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button_refresh;
+        private System.Windows.Forms.Button button_detail;
     }
 }
