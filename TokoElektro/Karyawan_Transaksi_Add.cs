@@ -29,6 +29,7 @@ namespace TokoElektro
             FillComboBox();
             showData();
 
+            button_cancel_transaksi.Visible = true;
             //hide button
             button_hapus.Visible = false;
             button_bayar.Visible = false;
@@ -89,7 +90,7 @@ namespace TokoElektro
                 connection.Close();
                 connection.Open();
 
-                string query = $"SELECT barang.nama, barang.harga, transaksi.quantity AS QTY, transaksi.sub_total AS Subtotal " +
+                string query = $"SELECT barang.nama, barang.harga, transaksi.id_barang, transaksi.id AS id_transaksi, transaksi.quantity AS QTY, transaksi.sub_total AS Subtotal " +
                                $"FROM transaksi " +
                                $"JOIN barang ON transaksi.id_barang = barang.id " +
                                $"WHERE id_struk = {idstruk}";
@@ -117,8 +118,12 @@ namespace TokoElektro
                 table_keranjang.Columns["Subtotal"].HeaderText = "Subtotal";
                 table_keranjang.Columns["nama"].HeaderText = "Nama Barang";
                 table_keranjang.Columns["harga"].HeaderText = "Harga";
+                //hidden
+                table_keranjang.Columns["id_transaksi"].Visible = false;
+                table_keranjang.Columns["id_barang"].Visible = false;
 
                 connection.Close();
+                CheckTableContent();
             }
             catch (Exception x)
             {
@@ -209,9 +214,9 @@ namespace TokoElektro
                 DialogResult result = MessageBox.Show("Apakah yakin untuk menghapusnya dari keranjang?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    int id_transaksi = Convert.ToInt32(table_keranjang.CurrentRow.Cells[0].Value);
-                    int id_barang = Convert.ToInt32(table_keranjang.CurrentRow.Cells[1].Value);
-                    int quantity = Convert.ToInt32(table_keranjang.CurrentRow.Cells[3].Value);
+                    int id_transaksi = Convert.ToInt32(table_keranjang.CurrentRow.Cells["id_transaksi"].Value);
+                    int id_barang = Convert.ToInt32(table_keranjang.CurrentRow.Cells["id_barang"].Value);
+                    int quantity = Convert.ToInt32(table_keranjang.CurrentRow.Cells["QTY"].Value);
 
                     try
                     {
@@ -282,15 +287,17 @@ namespace TokoElektro
         }
         private void CheckTableContent()
         {
-            if (table_keranjang.Rows.Count > 0)
+            if (subtotal > 0)
             {
                 // Jika tabel memiliki isian, tampilkan tombol "Selesai"
                 button_bayar.Visible = true;
+                button_cancel_transaksi.Visible = false;
             }
             else
             {
                 // Jika tabel tidak memiliki isian, sembunyikan tombol "Selesai"
                 button_bayar.Visible = false;
+                button_cancel_transaksi.Visible = true;
             }
         }
 
@@ -302,6 +309,11 @@ namespace TokoElektro
         private void button_refresh_Click(object sender, EventArgs e)
         {
             FillComboBox();
+        }
+
+        private void button_cancel_transaksi_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

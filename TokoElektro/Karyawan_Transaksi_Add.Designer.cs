@@ -41,6 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button_bayar = new System.Windows.Forms.Button();
             this.button_refresh = new System.Windows.Forms.Button();
+            this.button_cancel_transaksi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.table_keranjang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,10 +183,24 @@
             this.button_refresh.UseVisualStyleBackColor = false;
             this.button_refresh.Click += new System.EventHandler(this.button_refresh_Click);
             // 
+            // button_cancel_transaksi
+            // 
+            this.button_cancel_transaksi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_cancel_transaksi.FlatAppearance.BorderSize = 0;
+            this.button_cancel_transaksi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_cancel_transaksi.Location = new System.Drawing.Point(30, 399);
+            this.button_cancel_transaksi.Name = "button_cancel_transaksi";
+            this.button_cancel_transaksi.Size = new System.Drawing.Size(120, 23);
+            this.button_cancel_transaksi.TabIndex = 32;
+            this.button_cancel_transaksi.Text = "Cancel Transaksi";
+            this.button_cancel_transaksi.UseVisualStyleBackColor = false;
+            this.button_cancel_transaksi.Click += new System.EventHandler(this.button_cancel_transaksi_Click);
+            // 
             // Karyawan_Transaksi_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button_cancel_transaksi);
             this.Controls.Add(this.button_refresh);
             this.Controls.Add(this.button_bayar);
             this.Controls.Add(this.label4);
@@ -221,5 +236,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button_bayar;
         private System.Windows.Forms.Button button_refresh;
+        private System.Windows.Forms.Button button_cancel_transaksi;
     }
 }
