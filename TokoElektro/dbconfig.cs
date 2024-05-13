@@ -9,7 +9,7 @@ namespace TokoElektro
     internal class dbconfig
     {
         static string dbname = "tokoelektro";
-        static string source = "MIWON\\SQLEXPRESS";
-        public static string conn = $"Data Source='{source}';Initial Catalog='{dbname}';Integrated Security=True;";
+        //static string source = "MIWON\\SQLEXPRESS";
+        public static string conn = $"Server=(local)\\SQLEXPRESS;Initial Catalog='{dbname}';Integrated Security=True;";
     }
 }
