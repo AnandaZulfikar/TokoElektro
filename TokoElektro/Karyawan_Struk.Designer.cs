@@ -85,11 +85,11 @@
             this.button_detail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button_detail.FlatAppearance.BorderSize = 0;
             this.button_detail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_detail.Location = new System.Drawing.Point(492, 409);
+            this.button_detail.Location = new System.Drawing.Point(480, 409);
             this.button_detail.Name = "button_detail";
-            this.button_detail.Size = new System.Drawing.Size(75, 23);
+            this.button_detail.Size = new System.Drawing.Size(87, 23);
             this.button_detail.TabIndex = 14;
-            this.button_detail.Text = "Detail & Print";
+            this.button_detail.Text = "Detail dan Print";
             this.button_detail.UseVisualStyleBackColor = false;
             this.button_detail.Click += new System.EventHandler(this.button_detail_Click);
             // 
